@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi Tiết Bài Viết</title>
+    <link rel="stylesheet" href="../css/homepage.css">
+    <style>
+        .detail-wrapper { max-width: 900px; margin: 50px auto; padding: 20px; }
+        .detail-img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 15px; }
+        .content-body { font-size: 1.2rem; line-height: 1.8; margin-top: 20px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <div class="detail-wrapper" id="postContent"></div>
+
+    <script>
+        const postId = localStorage.getItem('viewingPostId');
+        const listPosts = JSON.parse(localStorage.getItem('listPosts')) || [];
+        const post = listPosts.find(p => p.id == postId);
+
+        if (post) {
+            document.getElementById('postContent').innerHTML = `
+                <button onclick="history.back()"> Quay lại</button>
+                <h1>${post.title}</h1>
+                <p>Tác giả: ${post.author} - Ngày: ${post.date}</p>
+                <img src="${post.image}" class="detail-img">
+                <div class="content-body">${post.content}</div>
+            `;
+        }
+    </script>
+</body>
+</html>

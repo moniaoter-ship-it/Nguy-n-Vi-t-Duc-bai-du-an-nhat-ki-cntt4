@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Entries</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="./../css/entries_manage.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="sidebar">
+        <nav>
+  <a href="../pages/users_manage.html" class="nav-item">
+    <img src="../assets/Users_Group.png" alt="Manage Users" />
+    <span>Manage Users</span>
+  </a>
+  <a href="../pages/entries_manage.html" class="nav-item active">
+    <img src="../assets/Book.png" alt="Manage Entries" />
+    <span>Manage Entries</span>
+  </a>
+  <a href="../pages/article_manage.html" class="nav-item">
+    <img src="../assets/Book_Open.png" alt="Manage Article" />
+    <span>Manage Article</span>
+  </a>
+  <a href="#" class="nav-item logout" id="sidebarLogout">
+    <img src="../assets/Log_Out.png" alt="Log out" />
+    <span>Log out</span>
+  </a>
+</nav>
+      </div>
+
+      <div class="main-content">
+        <div class="top-bar">
+          <div class="search-bar">
+            <input type="text" placeholder="Search Article Categories" />
+          </div>
+          <div class="user-info">
+            <img
+              src="../assets/Image.png"
+              alt="User Avatar"
+              class="avatar"
+            />
+            <ul class="menu-list">
+              <li><a href="#"><i class="fa-regular fa-user"></i> View profile</a></li>
+              <li><a href="#"><i class="fa-regular fa-image"></i> Update picture</a></li>
+              <li><a href="../pages/passwork.html"><i class="fa-solid fa-key"></i> Password</a></li>
+              <li class="logout-item"><a href="#" id="btnLogout"><i class="fa-solid fa-right-from-bracket"></i> Log out</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content">
+          <h2><span class="folder-icon">📁</span> Manage Categories</h2>
+          <div class="add-category">
+            <label for="category-name">Category Name:</label>
+            <input type="text" id="category-name" placeholder="Enter category name" />
+            <button class="add-btn">Add Category</button>
+          </div>
+
+          <div class="category-list">
+            <h3>📋 Category List</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Category Name</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Technology</td>
+                  <td class="actions">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/entries_manage.js"></script>
+  </body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rikkei Edu Blog</title>
+    <link rel="stylesheet" href="../css/page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <div class="logo-wrapper">
+                <img src="../assets/Vector.png" alt="logo" class="logo-icon">
+                <span class="logo-name">RIKKEI_EDU_BLOG</span>
+            </div>
+        </div>
+
+        <div class="search-wrapper">
+            <input type="text" placeholder="Search for articles ...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="auth-group">
+            <a href="register.html" class="btn-outline" style="text-decoration: none;">Sign Up</a>
+            <a href="login.html" class="btn-outline" style="text-decoration: none;">Sign In</a>
+        </div>
+    </header>
+
+    <hr class="divider">
+
+    <main class="container">
+        <div class="page-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; width: 100%;">
+            <h1 class="page-title" style="margin-bottom: 0; white-space: nowrap;">ALL MY POSTS</h1>
+            
+            <div class="dropdown-add" style="position: relative;">
+                <a href="login.html" style="text-decoration: none;">
+                    <button class="btn-add-post" id="btnDropdown">
+                        <i class="fa-solid fa-plus"></i> Add New Post
+                    </button>
+                </a>
+            </div>
+        </div> <div class="grid">
+            <div class="card">
+                <img src="../assets/Image.png" alt="Work Productivity">
+                <div class="content">
+                    <p class="date">Date: 2025-02-25</p>
+                    <h3>A Productive Day at Work</h3>
+                    <p class="desc">
+                        Today was a really productive day at work. I managed to finish a report ahead of schedule and received positive feedback from my manager.
+                    </p>
+                    <div class="bottom">
+                        <span class="tag tag-purple">Daily Journal</span>
+                        <a href="#">Edit your post</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="../assets/Image (1).png" alt="Interview">
+                <div class="content">
+                    <p class="date">Date: 2025-02-24</p>
+                    <h3>My First Job Interview Experience</h3>
+                    <p class="desc">
+                        I had my first job interview today! I was nervous at first, but as the conversation went on, I felt more confident.
+                    </p>
+                    <div class="bottom">
+                        <span class="tag tag-blue">Work & Career</span>
+                        <a href="#">Edit your post</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="../assets/Image (2).png" alt="Thoughts">
+                <div class="content">
+                    <p class="date">Date: 2025-02-23</p>
+                    <h3>Overthinking Everything</h3>
+                    <p class="desc">
+                        Lately, I have been overthinking everything, from small decisions to bigger life choices. I know I should trust myself.
+                    </p>
+                    <div class="bottom">
+                        <span class="tag tag-green">Personal Thoughts</span>
+                        <a href="#">Edit your post</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="../assets/Image (3).png" alt="Design Collaboration">
+                <div class="content">
+                    <p class="date">Date: 2025-02-16</p>
+                    <h3>How collaboration makes us better designers</h3>
+                    <p class="desc">
+                        Collaboration can make our teams stronger, and our individual designs better.
+                    </p>
+                    <div class="bottom">
+                        <span class="tag tag-blue">Work & Career</span>
+                        <a href="#">Edit your post</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="../assets/Image (4).png" alt="Podcast">
+                <div class="content">
+                    <p class="date">Date: 2025-02-05</p>
+                    <h3>Podcast: Creating a better CX Community</h3>
+                    <p class="desc">
+                        Starting a community doesn’t need to be complicated, but how do you get star?
+                    </p>
+                    <div class="bottom">
+                        <span class="tag tag-purple">Emotions & Feelings</span>
+                        <a href="#">Edit your post</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="../assets/Image (5).png" alt="JS Frameworks">
+                <div class="content">
+                    <p class="date">Date: 2025-02-15</p>
+                    <h3>Our top 10 Javascript frameworks to use</h3>
+                    <p class="desc">
+                        JavaScript frameworks make development easy with extensive features and functionalities.
+                    </p>
+                    <div class="bottom">
+                        <span class="tag tag-blue">Work & Career</span>
+                        <a href="#">Edit your post</a>
+                    </div>
+                </div>
+            </div>
+        </div> <div class="pagination-container">
+            <button class="nav-page"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+            <div class="page-list">
+                <span class="page-num active">1</span>
+                <span class="page-num">2</span>
+                <span class="page-num">3</span>
+                <span class="dots">...</span>
+                <span class="page-num">8</span>
+                <span class="page-num">9</span>
+                <span class="page-num">10</span>
+            </div>
+            <button class="nav-page">Next <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="col logo"><h2>MY BLOG</h2></div>
+            <div class="col about">
+            <p class="about-text">
+              <strong>About Rareblocks</strong><br />
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              dictum aliquet accumsan porta lectus ridiculus in mattis. Netus
+              sodales in volutpat ullamcorper amet adipiscing fermentum.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Works</a></li>
+              <li><a href="#">Career</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Help</h3>
+            <ul>
+              <li><a href="#">Customer Support</a></li>
+              <li><a href="#">Delivery Details</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">Free eBooks</a></li>
+              <li><a href="#">Development Tutorial</a></li>
+              <li><a href="#">How to - Blog</a></li>
+              <li><a href="#">Youtube Playlist</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="social">
+    <a href="https://twitter.com/rikkeiedu" target="_blank" title="Twitter">
+        <i class="fa-brands fa-twitter"></i>
+    </a>
+    
+    <a href="https://www.facebook.com/rikkeieducation" target="_blank" title="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    
+    <a href="https://www.instagram.com/rikkeiedu" target="_blank" title="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+    
+    <a href="https://github.com/rikkeiedu" target="_blank" title="Github">
+        <i class="fa-brands fa-github"></i>
+    </a>
+</div>
+    </footer>
+    <script src="../js/page.js"></script>
+</body>
+</html>

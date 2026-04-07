@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Rikkei Edu Blog</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/login.js"></script>
+</head>
+<body>
+    <div class="back-nav">
+        <a href="../pages/page.html" id="btnBack">
+            <i class="fa-solid fa-house"></i> Back to Home
+        </a>
+    </div>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-illustration">
+                <img src="../assets/draw2.webp.png" alt="Illustration">
+            </div>
+
+            <div class="auth-form">
+                <div class="social-header">
+                    <span>Sign in with</span>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/rikkeieducation" target="_blank" class="icon fb">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="icon tw"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="icon ln"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="divider">
+                    <span>Or</span>
+                </div>
+
+                <form id="loginForm" novalidate>
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder="Enter a valid email address">
+                        <label for="email">Email address</label>
+                        <small class="error-message" id="emailError"></small>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" id="password" placeholder="Enter password">
+                        <label for="password">Password</label>
+                        <small class="error-message" id="passwordError"></small>
+                    </div>
+
+                    <button type="submit" class="btn-login" id="btnLogin">Login</button>
+                </form>
+
+                <p class="switch-auth">Don't have an account? <a href="register.html">Register</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="auth-footer-bar">
+        <p>Copyright © 2025. All rights reserved.</p>
+        <div class="footer-socials">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-google"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+    </footer>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

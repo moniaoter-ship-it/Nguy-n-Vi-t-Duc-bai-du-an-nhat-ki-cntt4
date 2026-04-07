@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rikkei Edu Blog</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="../assets/Vector.png" alt="logo" onerror="this.src='https://via.placeholder.com/30'">
+                <span>RIKKEI_EDU_BLOG</span>
+            </div>
+
+            <div class="search-box">
+                <input type="text" placeholder="Search for articles">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="user-area">
+                <div class="user-profile">
+                    <img src="../assets/Image.png" alt="User" class="avatar-trigger" onerror="this.src='https://via.placeholder.com/40'">
+                    <div class="dropdown-card">
+                        <div class="dropdown-arrow"></div>
+                        <div class="user-header">
+                            <img src="../assets/Image.png" alt="Rikkei" onerror="this.src='https://via.placeholder.com/35'">
+                            <div class="info">
+                                <p class="name">Rikkei <span class="status-dot"></span></p>
+                                <p class="email">rikkei@gmail.com</p>
+                            </div>
+                        </div>
+                        <ul class="menu-list">
+                            <li><a href="#"><i class="fa-regular fa-user"></i> View profile</a></li>
+                            <li><a href="#"><i class="fa-regular fa-image"></i> Update profile picture</a></li>
+                            <li><a href="../pages/passwork.html"><i class="fa-solid fa-key"></i> Change password</a></li>
+                            <li class="logout-item"><a href="#" id="btnLogout"><i class="fa-solid fa-right-from-bracket"></i> Log out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="post">
+            <a href="index.html" id="return"><i class="fa-solid fa-arrow-left"></i> BACK</a>
+            <div class="post-header">
+                <div class="avatar">
+                    <img src="../assets/Image.png" alt="" onerror="this.src='https://via.placeholder.com/45'">
+                </div>
+                <div class="user-infos">
+                    <div class="username">Rikkei Academy</div>
+                    <div class="time">14 hours ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                Blog Content here this is a placeholder. Chào mừng bạn đến với blog của Rikkei Edu!
+            </div>
+
+            <div class="post-image">
+                <img src="../assets/Image.png" alt="Post Image" onerror="this.src='https://via.placeholder.com/800x400'">
+            </div>
+
+            <div class="actions">
+                <div class="action-btn"><i class="fa-regular fa-comment"></i> Comment</div>
+                <div class="action-btn"><i class="fa-solid fa-share"></i> Share</div>
+            </div>
+        </section>
+
+        <section class="comment-container">
+            <div class="comment-input-box">
+                <input type="text" id="inputComment" placeholder="Write comment...">
+                <button onclick="addComment()">Send</button>
+            </div>
+            
+            <div id="commentSection" class="comments-list">
+                <div class="comment">
+                    <div class="avatars"></div>
+                    <div class="bubble">
+                        <div class="name">Username</div>
+                        <div class="text">This is a placeholder comment!</div>
+                        <div class="meta">reply</div>
+                    </div>
+                    <div class="delete-btn" onclick="deleteComment(this)">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/header.js"></script>
+</body>
+</html>

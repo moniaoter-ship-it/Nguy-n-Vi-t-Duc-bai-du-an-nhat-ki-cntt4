@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký - Rikkei Education</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="welcome-section">
+            </div>
+
+        <div class="form-section">
+            <div class="form-container">
+                <h2 class="form-title">Create Account</h2>
+                
+                <form id="registerForm" novalidate>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="text" id="firstName" placeholder="First name">
+                            <small class="error-message" id="firstNameError"></small>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="lastName" placeholder="Last name">
+                            <small class="error-message" id="lastNameError"></small>
+                        </div>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <input type="email" id="email" placeholder="Email address">
+                        <small class="error-message" id="emailError"></small>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <input type="password" id="pass" placeholder="Password">
+                        <small class="error-message" id="passError"></small>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <input type="password" id="confirm" placeholder="Confirm Password">
+                        <small class="error-message" id="confirmError"></small>
+                    </div>
+
+                    <button type="submit" class="btn-signup">Sign up</button>
+                    <p class="switch-link">Already have an account? <a href="login.html">login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/register.js"></script>
+</body>
+</html>

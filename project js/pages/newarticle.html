@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Editor - Rikkei Edu Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+        #file-upload { display: none; }
+        /* Mood Picker mặc định ẩn, hiện khi thêm class .show */
+        #moodPicker { display: none; position: absolute; z-index: 50; top: 100%; left: 0; }
+        #moodPicker.show { display: grid; }
+        .mood-item { cursor: pointer; transition: transform 0.2s; }
+        .mood-item:hover { transform: scale(1.3); }
+        .preview-img { width: 80px; height: 80px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="max-w-5xl mx-auto bg-white border border-gray-300 shadow-sm rounded-sm">
+        <div class="p-4 border-b border-gray-200">
+            <div class="flex justify-between items-center mb-1">
+                <div class="flex items-center gap-3">
+                    <a href="javascript:void(0)" id="btnBack" class="flex items-center gap-1 text-gray-500 hover:text-blue-600 transition-colors text-sm group">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span class="font-medium">Back</span>
+                    </a>
+                    <div class="h-4 w-[1px] bg-gray-300 mx-1"></div> 
+                    <label class="font-bold text-gray-700 text-sm uppercase">Create New Post</label>
+                </div>
+                <button id="btnClose" onclick="window.history.back()" class="text-gray-400 hover:text-red-500 transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            +
+            <div class="mt-3">
+                <label class="block font-bold text-gray-700 text-[12px] mb-1">TITLE:</label>
+                <input type="text" id="postTitle" placeholder="Enter title..." class="w-full border border-gray-300 p-2 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-400 text-sm">
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 border-b border-gray-200">
+            <div class="p-4 border-r border-gray-200">
+                <label class="block font-bold text-gray-700 text-sm mb-2">Topic:</label>
+                <select id="postTopic" class="w-full bg-gray-50 border border-gray-200 p-2 rounded-sm text-sm focus:outline-none">
+                    <option value="">-- Select Topic --</option>
+                    <option value="IT">Lập trình IT</option>
+                    <option value="Life">Đời sống</option>
+                    <option value="Travel">Du lịch</option>
+                    <option value="food">Ẩm Thực</option>
+                </select>
+            </div>
+
+            <div class="p-4 relative">
+                <label class="block font-bold text-gray-700 text-sm mb-2">How are you feeling?</label>
+                <button id="btnMoodToggle" class="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md text-sm transition-all border border-gray-300">
+                    <span id="selectedMoodIcon">😊</span> 
+                    <span id="selectedMoodText">Happy</span>
+                    <i class="fa-solid fa-chevron-down text-[10px] ml-2 text-gray-400"></i>
+                </button>
+
+                <div id="moodPicker" class="grid-cols-4 gap-4 p-4 bg-white border border-gray-300 shadow-xl rounded-md mt-2 w-64">
+                    <span class="mood-item text-2xl" data-mood="😊" data-name="Happy">😊</span>
+                    <span class="mood-item text-2xl" data-mood="🥰" data-name="Loved">🥰</span>
+                    <span class="mood-item text-2xl" data-mood="😎" data-name="Cool">😎</span>
+                    <span class="mood-item text-2xl" data-mood="🤩" data-name="Excited">🤩</span>
+                    <span class="mood-item text-2xl" data-mood="🤔" data-name="Thinking">🤔</span>
+                    <span class="mood-item text-2xl" data-mood="😴" data-name="Sleepy">😴</span>
+                    <span class="mood-item text-2xl" data-mood="😭" data-name="Sad">😭</span>
+                    <span class="mood-item text-2xl" data-mood="🔥" data-name="Energetic">🔥</span>
+                </div>
+            </div>
+        </div>
+
+       <div class="p-4 border-b border-gray-200 bg-gray-50">
+    <label class="block font-bold text-gray-700 text-sm mb-2">Post Image URL:</label>
+    <div class="flex flex-col gap-3">
+        <input type="text" id="imageUrl" 
+               placeholder="Dán link ảnh online vào đây (https://...)" 
+               class="w-full border border-gray-300 p-2 rounded-sm focus:outline-none focus:ring-1 focus:ring-blue-400 text-sm bg-white">
+        
+        <div id="imagePreviewContainer" class="hidden flex flex-col items-start gap-2 bg-white p-3 border rounded-md shadow-sm w-fit">
+            <p class="text-[10px] font-bold text-blue-600 uppercase">Preview:</p>
+            <img id="imagePreview" src="#" alt="Preview" class="max-w-[200px] max-height-[150px] object-cover rounded border">
+            <button type="button" onclick="removeImage()" class="text-[11px] text-red-500 hover:font-bold transition-all">
+                <i class="fa-solid fa-trash-can"></i> Xóa link
+            </button>
+        </div>
+    </div>
+</div>
+
+        <div class="p-4 border-b border-gray-200">
+            <label class="block font-bold text-gray-700 text-sm mb-2">Content:</label>
+            <textarea id="postContent" class="w-full border border-gray-300 p-2 rounded-sm min-h-[150px] text-sm focus:outline-none" placeholder="Write something..."></textarea>
+        </div>
+
+        <div class="p-4 flex items-center justify-between bg-gray-50">
+            <div class="flex items-center gap-6">
+                <span class="font-bold text-gray-700 text-sm">Status:</span>
+                <label class="flex items-center gap-2 text-sm cursor-pointer">
+                    <input type="radio" name="status" value="Public" checked> public
+                </label>
+                <label class="flex items-center gap-2 text-sm cursor-pointer">
+                    <input type="radio" name="status" value="Private"> private
+                </label>
+            </div>
+
+            <button id="btnAddPost" class="bg-[#28a745] hover:bg-[#218838] text-white px-8 py-2 rounded text-sm font-bold uppercase transition">
+                Add
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            const container = document.getElementById('imagePreviewContainer');
+            const preview = document.getElementById('imagePreview');
+            const nameDisplay = document.getElementById('fileNameDisplay');
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    nameDisplay.innerText = file.name;
+                    container.classList.remove('hidden');
+                    // Lưu vào biến toàn cục để file newarticle.js truy cập
+                    window.selectedImageBase64 = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function removeImage() {
+            document.getElementById('file-upload').value = "";
+            document.getElementById('imagePreviewContainer').classList.add('hidden');
+            window.selectedImageBase64 = null;
+        }
+    </script>
+    <script src="../js/newarticle.js"></script>
+</body>
+</html>

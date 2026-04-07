@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Users - Quản lý người dùng</title>
+    <link rel="stylesheet" href="./../css/users_manage.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <aside class="sidebar">
+        <nav>
+  <a href="../pages/users_manage.html" class="nav-item active">
+    <img src="../assets/Users_Group.png" alt="Manage Users" />
+    <span>Manage Users</span>
+  </a>
+  <a href="../pages/entries_manage.html" class="nav-item">
+    <img src="../assets/Book.png" alt="Manage Entries" />
+    <span>Manage Entries</span>
+  </a>
+  <a href="../pages/article_manage.html" class="nav-item">
+    <img src="../assets/Book_Open.png" alt="Manage Article" />
+    <span>Manage Article</span>
+  </a>
+  <a href="#" class="nav-item logout">
+    <img src="../assets/Log_Out.png" alt="Log out" />
+    <span>Log out</span>
+  </a>
+</nav>
+      </aside>
+
+      <div class="main">
+        <div class="header">
+          <div>
+            <h2>Team members <span class="user-count">100 users</span></h2>
+          </div>
+          <div class="top-right">
+            <div class="user-info">
+              <img
+                src="../assets/Image.png"
+                alt="User Avatar"
+                class="avatar"
+              />
+              <ul class="menu-list">
+                <li><a href="#"><i class="fa-regular fa-user"></i> View profile</a></li>
+                <li><a href="#"><i class="fa-regular fa-image"></i> Update picture</a></li>
+                <li><a href="../pages/passwork.html"><i class="fa-solid fa-key"></i> Password</a></li>
+                <li class="logout-item">
+                  <a href="#" id="btnLogout"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="search-container">
+          <input type="text" class="search-box" placeholder="Search user" />
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Name <span class="sort">A↓Z</span></th>
+              <th>Status</th>
+              <th>Email address</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tbody id="userTableBody">
+           </tbody>
+          </tbody>
+        </table>
+
+        <div class="pagination">
+  <button class="prev-next" id="prevPage">← Previous</button>
+  <div class="page-numbers" id="pageNumbers">
+    </div>
+          <button class="prev-next" id="nextPage">Next →</button>
+        </div>
+      </div>
+    </div>
+    <script src="../js/users_manage.js"></script>
+  </body>
+</html>
