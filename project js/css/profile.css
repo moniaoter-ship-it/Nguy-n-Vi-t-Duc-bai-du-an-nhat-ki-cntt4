@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #f1faee; /* Màu nền đồng bộ */
+  background-color: #f1faee; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +55,6 @@ body {
   overflow: hidden;
 }
 
-/* Sidebar bên trái (Avatar) */
 .profile-avatar-section {
   background-color: #457b9d;
   color: white;
@@ -106,7 +105,6 @@ body {
   margin-top: 5px;
 }
 
-/* Phần thông tin bên phải */
 .profile-info-section {
   padding: 40px;
   width: 65%;
